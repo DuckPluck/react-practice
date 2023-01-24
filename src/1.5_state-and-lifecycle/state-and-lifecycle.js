@@ -76,7 +76,7 @@ this.setState({
 });
 
 this.setState((state, props) => ({
-  counter: state.counter + props.increment,             // - мммм (👍)
+  counter: state.counter + props.increment,             // - мммм) (👍)
 }));
 
 
