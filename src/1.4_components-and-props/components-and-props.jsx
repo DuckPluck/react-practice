@@ -26,8 +26,9 @@ class WelcomeC extends React.Component {
 // Сила компонентов в том, что их можно вызывать как DOM эл-ты (тегами).
 const element1 = <WelcomeF name='Алиса' />;
 // Когда React видит подобную запись - создается объект `props`, который собирает все атрибуты(name) и содержание и передает их в компонент(WelcomeC).
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(element1);
+
+// const Componentsandprops = ReactDOM.createRoot(document.getElementById('root'));
+// Componentsandprops.render(element1);
 
 
 // Компоненты НИКОГДА не должны изменять свои входные данные(пропсы) напрямую. Они сначала копируют их, потом возвращают новый результат.

@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../styles.scss';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 
@@ -30,7 +30,7 @@ function Greeting(props) {                      // Компонент управ
   return <GuestGreeting/>;
 }
 
-root.render(<Greeting isLoggedIn={true} />);    // Вызов компонента управления в зависимости от пропа `isLoggedIn`
+// root.render(<Greeting isLoggedIn={true} />);    // Вызов компонента управления в зависимости от пропа `isLoggedIn`
 
 
 

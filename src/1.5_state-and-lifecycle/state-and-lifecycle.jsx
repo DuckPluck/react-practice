@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../styles.scss';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 // В большом количестве компоненты перегружают систему, поэтому их нужно чистить.
@@ -59,7 +59,7 @@ class Clock extends React.Component {
   }
 }
 
-root.render(<Clock />);
+// root.render(<Clock />);
 
 
 

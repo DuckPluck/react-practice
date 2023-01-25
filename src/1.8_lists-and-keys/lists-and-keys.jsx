@@ -1,32 +1,46 @@
 // https://ru.reactjs.org/docs/lists-and-keys.html
 
 
+import { number } from 'prop-types';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 import '../styles.scss';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 
 // Для вывода нескольких похожих компонентов подряд (списка) в React используется `.map()`
-function NumberList (props) {
+export function NumberList (props) {
   const numbers = props.numbers;
-  ;
+
+  NumberList.propTypes = {                              // Про типизацию пропсов чуть ниже
+    numbers: number.isRequired
+  }
 
   return (
       <ul>
         {numbers.map(num =>
           <li key={num.toString()}>
             {num}
-          </li>                                      // Про ключи `key={num.toString()}` чуть ниже
+          </li>                                         // Про ключи `key={num.toString()}` еще ниже
         )}
       </ul>
   );
 }
 
-const numbers = [1, 2, 3, 4, 5];
-root.render(<NumberList numbers={numbers} />);
+export const numbers = [1, 2, 3, 4, 5];
+
+// root.render(<NumberList numbers={numbers} />);
+
+
+
+// В последних версиях React при обращении к пропсам требуется создавать статическое св-во `propTypes` с объектом - валидатором типов
+//  - имя св-ва объекта это имя переменной, значение - возможные типы, которые принимает переменная.
+
+// Это необходимо, чтобы React предупреждал об ошибках связанных с типами данных
+// Также необходимо импортировать нужный тип и `isRequired` from 'prop-types'
 
 
 
