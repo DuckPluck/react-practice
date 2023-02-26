@@ -12,8 +12,8 @@ import '../styles.scss';
 // Делается это с помощью lifecycle-методов `componentDidMount()` и `componentWillUnmount()`  (mount - рендер компонентов в DOM)
 
 // `componentDidMount()` - запускается как только компонент внедрён в DOM
-// `componentWillUnmount()` - запускается при удалении компонента из DOM
-class LifecycleExample {
+// `componentWillUnmount()` - запускается перед удалением компонента из DOM
+class LifecycleExample extends React.Component {
   componentDidMount() {
     this.timerID = setInterval(
         () => this.tick, 1000);
@@ -25,6 +25,18 @@ class LifecycleExample {
 }
 
 
+// Иногда сброс или выполнение эффекта может вызвать проблемы с производительностью.
+// Чтобы не выполнять рендер каждый раз, возможно решить это с помощью сравнения `prevProps` или `prevState`
+class Example2 extends React.Component {
+  componentDidMount(prevProps, prevState) {
+    if (prevState.count !== this.state.count) {
+      document.title = `Total count is ${this.state.count}`
+    }
+  }
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Состояния(state) позволяют изменять компоненты, не пересоздавая их.
 // Состояние объявляется в конструкторе компонента.
 // Состояние это как пропс, который доступен только конкретному компоненту.
