@@ -8,6 +8,7 @@ import '../styles.scss';
 
 // Контекст позволяет вынести логику в отдельный файл context.jsx,
 // потом можно обратиться к этой логике из любого компонента, который находится внутри тега <Context.Provider> напрямую.
+// Для этого необходимо указать объект контекста в static св-во компонента `objectType`. Далее можно обращаться к контексту через `this.context`
 const ThemeContext = React.createContext('light');
 
 class App extends React.Component {
@@ -29,7 +30,7 @@ function Toolbar() {
 }
 
 class ThemedButton extends React.Component {
-  static contextType = ThemeContext;              // получили контекст, минуя промежуточный компонент
+  static contextType = ThemeContext;              // получили контекст, минуя промежуточный компонент <Toolbar />
   render() {
     return <Button theme={this.context} />;
   }
