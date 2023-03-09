@@ -29,7 +29,7 @@ function reducer1(state, action) {             // Перечисляем дей�
 }
 
 function Counter1() {
-  const [state, dispatch] = useReducer(reducer1, initialState, init);              /* wtf почему ругается? */
+  const [state, dispatch] = useReducer(reducer1, initialState, init);
 
   return (
       <>
@@ -61,13 +61,13 @@ function reducer2(state, action) {
   }
 }
 
-function Counter2({initialCount}) {
-  const [state, dispatch] = useReducer(reducer2, initialCount, init);
+function Counter2() {
+  const [state, dispatch] = useReducer(reducer2, initialState, init);
   return (
       <>
         Count: {state.count}
         <button
-            onClick={() => dispatch({type: 'reset', payload: initialCount})}>
+            onClick={() => dispatch({type: 'reset', payload: initialState})}>
           Reset
         </button>
         <button onClick={() => dispatch({type: 'decrement'})}>-</button>

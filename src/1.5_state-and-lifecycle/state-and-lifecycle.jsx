@@ -129,3 +129,6 @@ class Example1 extends React.Component {
 function FormattedDate(props) {
   return <h2>Сейчас {props.date.toLocaleString()}.</h2>;
 }
+
+
+// TODO: Перечислить этапы жизненного цикла (картинка с рнд)
