@@ -33,4 +33,4 @@ function ThemedButton(props) {
   return <Button theme={contextValue} />;
 }
 
-// Тонкости контекста приведены в пункте 3.3_context
+// Тонкости контекста приведены в пункте 2.3_context
