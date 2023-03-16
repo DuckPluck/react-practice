@@ -1,6 +1,5 @@
 // https://ru.reactjs.org/docs/reconciliation.html
 
-import React from 'react';
 
 // Для экономии ресурсов при ререндере React сравнивает два DOM дерева (старое и новое).
 // Сравнение идет от корневых эл-тов к ветвям.

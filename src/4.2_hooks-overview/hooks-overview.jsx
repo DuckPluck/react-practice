@@ -22,6 +22,12 @@ function ExampleWithManyStates(props) {
 }
 
 
+// Для оптимизации больших компонентов (чтобы не вычислять начальное состояние больше одного раза) рекомендуется передавать в аргумент `useState` функцию
+function Example10() {
+  const [example, setExample] = useState(() => 'initial value')
+}
+
+
 
 // `useEffect(callback)` это хук, который выполняет функционал `componentDidMount()`, `componentDidUpdate()` и `componentWillUnmount()`.
 // Функция в колбэке запускается после каждого рендера.
