@@ -15,6 +15,8 @@ const scaleNames = {
   f: 'Фаренгейта'
 };
 
+
+
 function toCelsius(fahrenheit) {
   return (fahrenheit - 32) * 5 / 9;
 }
@@ -33,6 +35,8 @@ function tryConvert(temperature, convert) {
   return rounded.toString();
 }
 
+
+
 export function BoilingVerdict(props) {
   BoilingVerdict.propTypes = {celsius: number};
 
@@ -41,6 +45,8 @@ export function BoilingVerdict(props) {
   }
   return <p>Вода НЕ закипит</p>;
 }
+
+
 
 export class TemperatureInput extends React.Component {
   static propTypes = {scale: string, temperature: string, onTemperatureChange: func};
@@ -65,6 +71,8 @@ export class TemperatureInput extends React.Component {
     );
   }
 }
+
+
 
 export class Calculator extends React.Component {
   constructor(props) {
